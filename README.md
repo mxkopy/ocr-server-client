@@ -2,10 +2,10 @@
 This code implements a simple asynchronous Tesseract-OCR server and synchronous client. When possible, functionality relies on external libraries, and few new dependencies are introduced (for example, Leptonica Pix objects, the native representation of image data underlying Tesseract, are serialized using Boost Archives and sent over the network using Boost Asio sockets).
 
 Currently, this is only a proof of concept, but has some basic primitives implemented for a more fully-featured application. These include:
-- a generic serialization wrapper around Boost TCP sockets
-- a generic asynchronous TCP server base class for streaming connections
-- a generic synchronous TCP client base class for streaming connections 
-- serialization methods for the Leptonica Pix struct
+- a generic serialization wrapper around Boost TCP sockets (`tcp_stream.hpp`)
+- a generic asynchronous TCP server base class for streaming connections (`tcp_server.hpp`)
+- a generic synchronous TCP client base class for streaming connections (`tcp_client.hpp`)
+- serialization methods for the Leptonica Pix struct (`serialization.hpp`)
 
 # Testing 
 Run
