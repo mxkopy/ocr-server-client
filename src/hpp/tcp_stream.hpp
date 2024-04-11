@@ -6,14 +6,14 @@
 
 using namespace boost::asio;
 
-/* 
+/*
 This class allows the use of Boost archives for serialization over Boost TCP sockets
 (more specifically, TCP iostreams, since archives work on iostreams).
 Some basic functions matching the socket interface are implemented. 
 */
 
 struct tcp_stream : public std::enable_shared_from_this<tcp_stream> {
-     
+
     boost::asio::io_context& io_context;
     ip::tcp::iostream stream;
     boost::archive::binary_iarchive iarchive;
@@ -76,7 +76,8 @@ struct tcp_stream : public std::enable_shared_from_this<tcp_stream> {
         stream.flush();
     }
 
-    void connect(ip::tcp::endpoint endpoint){
+    void connect(ip::tcp::endpoint endpoint)
+    {
         stream.connect(endpoint);
     }
 
