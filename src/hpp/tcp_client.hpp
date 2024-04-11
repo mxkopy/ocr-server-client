@@ -9,6 +9,7 @@ This class implements a synchronous client interface.
 Classes that inherit this server and set its template 
 to their type (i.e. use the CRTP) need only implement 
 the non-looping handle_connect(tcp_stream::pointer& stream) method. 
+See tesseract_client.hpp for an example.
 handle_connect is basically what the client should do to a connection
 it establishes (i.e. it should contain the send/recv calls that 
 define the protocol).

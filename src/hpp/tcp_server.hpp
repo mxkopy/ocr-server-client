@@ -9,6 +9,7 @@ This class implements an asynchronous server interface.
 Classes that inherit this server and set its template 
 to their type (i.e. use the CRTP) need only implement 
 the non-looping handle_accept(tcp_stream::pointer& stream) method. 
+See tesseract_server.hpp for an example.
 handle_accept is basically what the server should do to a connection it receives
 (i.e. it should contain the send/recv calls that define the protocol).
 */
