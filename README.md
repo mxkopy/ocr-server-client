@@ -9,18 +9,36 @@ Currently, this is only a proof of concept, but has some basic primitives implem
 
 # Testing 
 You can install the dependencies with:
+
+
 `sudo apt install tesseract-ocr libtesseract-dev libboost-all-dev libpng-dev`
 
 Then, run
+
+
 `make server client`
+
+
 to build the server and client binaries, then 
+
+
 `./server HOST SERVICE/PORT`
+
+
 to run the server and 
+
+
 `./client HOST SERVICE/PORT` 
+
+
 to run the client. 
+
+
 
 Host defaults to `127.0.0.1` and port defaults to `1234`. 
 
+
 You can stop the server and client with CTRL-C. 
+
 
 Right now all the client does is read `image.png` in the current directory, send it to the server, print the response, and loop. 
