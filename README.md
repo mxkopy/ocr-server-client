@@ -16,8 +16,9 @@ to run the server and
 `./client HOST SERVICE/PORT` 
 to run the client. 
 
-You can stop the server and client with CTRL-C. 
+Host defaults to `127.0.0.1` and port defaults to `1234`. 
 
-By default host defaults to `127.0.0.1` and port to `1234`. 
+
+You can stop the server and client with CTRL-C. 
 
 Right now all the client does is read `image.png` in the current directory, send it to the server, print the response, and loop. 
