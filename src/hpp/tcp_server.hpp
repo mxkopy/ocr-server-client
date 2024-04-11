@@ -30,6 +30,8 @@ struct tcp_server {
         async_accept();
     }
 
+    // Asynchronously handles connections, looping recursively 
+    // Posts handle_accept to be scheduled by io_context, then recurses to schedule the next call 
     void async_handle_accept(tcp_stream::pointer stream)
     {
         boost::asio::post(
@@ -49,6 +51,8 @@ struct tcp_server {
         );
     }
 
+    // Asynchronously accepts new connections
+    // Calls itself whenever a new connection is accepted, so it can wait for another
     void async_accept()
     {
         tcp_stream::pointer stream = tcp_stream::create(io_context);
