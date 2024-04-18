@@ -19,9 +19,9 @@ struct tesseract_client : tcp_client<tesseract_client> {
 
     void handle_connect(tcp_stream::pointer connection)
     {
+        connection -> send(std::string("echo"));
         std::string test = connection -> recv<std::string>();
         std::cout << test << std::endl;
-        connection -> send(test);
     }
 
 };
