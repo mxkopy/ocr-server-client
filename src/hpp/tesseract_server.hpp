@@ -20,12 +20,9 @@ struct tesseract_server : tesseract::TessBaseAPI, tcp_server<tesseract_server> {
 
     void handle_accept(tcp_stream::pointer connection)
     {
-        Pix* img = connection -> recv<Pix*>();
-        SetImage(img);
-        char* result = GetUTF8Text();
-        std::string str(result);
-        connection -> send(str);
-        delete [] result;
+        std::string test = connection -> recv<std::string>();
+        std::cout << test << std::endl;
+        connection -> send(test);
     }
 };
 

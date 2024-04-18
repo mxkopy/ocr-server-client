@@ -19,10 +19,9 @@ struct tesseract_client : tcp_client<tesseract_client> {
 
     void handle_connect(tcp_stream::pointer connection)
     {
-        Pix* img = pixRead("test/test.png");
-        connection -> send(img);
-        std::string out = connection -> recv<std::string>();
-        std::cout << out << std::endl;
+        std::string test = connection -> recv<std::string>();
+        std::cout << test << std::endl;
+        connection -> send(test);
     }
 
 };
